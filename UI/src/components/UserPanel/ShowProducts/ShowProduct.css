@@ -1,0 +1,14 @@
+@keyframes flash {
+  0%,
+  100% {
+    color: #fff;
+  }
+  50% {
+    color: #ff3b3b;
+  }
+}
+
+.timer-flash {
+  animation: flash 1s infinite;
+  font-weight: bold;
+}
