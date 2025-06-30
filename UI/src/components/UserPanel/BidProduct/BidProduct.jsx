@@ -21,7 +21,7 @@ function BidProduct() {
         console.log(response.data[0]);
         setProductDetails(response.data[0]);
       });
-  });
+  }, []);
 
   useEffect(() => {
     if (!productDetails.baseprice) return;
@@ -29,15 +29,15 @@ function BidProduct() {
     axios
       .get(__bidapiurl + "fetch", { params: { product_id: params._id } })
       .then((response1) => {
-        console.log("Fetched bids:", response1.data); // 👈 log this
+        // console.log("Fetched bids:", response1.data); // 👈 log this
 
         const bids = response1.data;
 
         if (!Array.isArray(bids) || bids.length === 0) {
-          console.log(
-            "No bids found, using base price:",
-            productDetails.baseprice
-          );
+          // console.log(
+          //   "No bids found, using base price:",
+          //   productDetails.baseprice
+          // );
           setCurrentPrice(productDetails.baseprice);
         } else {
           const minBid = bids.reduce(
@@ -45,12 +45,12 @@ function BidProduct() {
             bids[0].bidprice
           );
 
-          console.log("Min bid found:", minBid);
+          // console.log("Min bid found:", minBid);
           setCurrentPrice(minBid);
         }
       })
-      .catch((error) => {
-        console.error("Error fetching bids:", error);
+      .catch(() => {
+        // console.error("Error fetching bids:", error);
         setCurrentPrice(productDetails.baseprice);
       });
   }, [productDetails, params._id]);
@@ -82,9 +82,8 @@ function BidProduct() {
           <div class="row g-5 align-items-center">
             <div class="col-lg-12">
               <h1 class="mb-4">
-                Bid Product <span class="text-primary ">Here!!</span>
+                Bid Product <span style={{ color: "#" }}>Here!!</span>
               </h1>
-             
               <div className="table-responsive">
                 <table>
                   <tr>
@@ -120,6 +119,7 @@ function BidProduct() {
                       </form>
                     </td>
                   </tr>
+                  {output}
                 </table>
               </div>
             </div>

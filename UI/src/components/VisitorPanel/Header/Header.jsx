@@ -176,7 +176,7 @@ function Header() {
                         <li className="nav-item active">
                           <a className="nav-link">
                             <Link to="/user">
-                              UsHome <span className="sr-only">(current)</span>
+                              Home <span className="sr-only">(current)</span>
                             </Link>
                           </a>
                         </li>
@@ -185,17 +185,45 @@ function Header() {
                           <a className="nav-link">
                             <Link to="/search">Search</Link>
                           </a>
-                        </li>
-                        <li className="nav-item">
-                          <a className="nav-link">
-                            <Link to="/addproduct">Add Products</Link>
+                        </li>l
+                        <div class="nav-item dropdown">
+                          <a
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            style={{ color: "#0a97b0" }}
+                          >
+                            Products
                           </a>
-                        </li>
-                        <li className="nav-item">
-                          <a className="nav-link">
-                            <Link to="/allproducts">Show All Products</Link>
+                          <div class="dropdown-menu rounded-0 m-0">
+                            <a class="dropdown-item">
+                              <Link to="/addproduct">Add Products</Link>
+                            </a>
+                            <a class="dropdown-item">
+                              <Link to="/allproducts">Show All Products</Link>
+                            </a>
+                            <a class="dropdown-item">
+                              <Link to="/myproduct">My Products</Link>
+                            </a>
+                          </div>
+                        </div>
+
+                        <div class="nav-item dropdown">
+                          <a
+                            class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown"
+                            style={{ color: "#0a97b0" }}
+                          >
+                            Settings
                           </a>
-                        </li>
+                          <div class="dropdown-menu rounded-0 m-0">
+                            <a class="dropdown-item">
+                              <Link to="/epadmin">Edit Profile</Link>
+                            </a>
+                            <a class="dropdown-item">
+                              <Link to="/cpadmin">Change Password</Link>
+                            </a>
+                          </div>
+                        </div>
                         <li className="nav-item">
                           <a className="nav-link">
                             <Link to="/logout">

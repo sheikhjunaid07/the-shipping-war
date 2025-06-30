@@ -24,6 +24,7 @@ import ShowAllProducts from "./components/UserPanel/ShowAllProducts/ShowAllProdu
 import EditSubCategory from "./components/AdminPanel/EditSubCategory/EditSubCategory";
 import ManageProducts from "./components/AdminPanel/ManageProducts/ManageProducts";
 import BidProduct from "./components/UserPanel/BidProduct/BidProduct";
+import MyProduct from "./components/UserPanel/MyProduct/MyProduct";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         {/* User Panel Routes */}
         <Route path="/user" element={<UserPanel />}></Route>
         <Route path="/addproduct" element={<AddProduct />}></Route>
+        <Route path="/myproduct" element={<MyProduct />}></Route>
         <Route path="/search" element={<Search />}></Route>
         <Route path="/searchsc/:catnm" element={<SearchSubCategory />}></Route>
         <Route path="/showproduct/:subcatnm" element={<ShowProducts />}></Route>

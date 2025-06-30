@@ -8,7 +8,7 @@ function UserPanel() {
               <div className="detail-box">
                 <div className="heading_container">
                   <h2>
-                    User <span>Panel</span>
+                    Welcome back, <span>{localStorage.getItem("name")}</span>
                   </h2>
                 </div>
                 <p>

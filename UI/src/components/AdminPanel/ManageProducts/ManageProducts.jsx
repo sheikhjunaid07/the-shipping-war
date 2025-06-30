@@ -1,12 +1,14 @@
+import "./ManageProduct.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { __shipmentapiurl } from "../../../reqUrl";
+import { Link } from 'react-router-dom'
 
 function ManageProducts() {
   const [productList, setProductList] = useState([]);
   const [tick, setTick] = useState(0);
 
-  const fetchProduct = () =>  {
+  const fetchProduct = () => {
     axios
       .get(__shipmentapiurl + "fetch")
       .then((response) => setProductList(response.data))
@@ -63,6 +65,10 @@ function ManageProducts() {
       }
     });
   };
+
+  const handleEditButton = ()=>{
+    
+  }
 
   return (
     <>
@@ -143,7 +149,9 @@ function ManageProducts() {
                               {row.bid_status === 1 ? "Active" : "Deactive"}
                             </span>
                           </td>
-                          <td></td>
+                          <td>
+                            <span onClick={handleEditButton} className="fa fa-edit"></span>
+                          </td>
                         </tr>
                       ))
                     )}

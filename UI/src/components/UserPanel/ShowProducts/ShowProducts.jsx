@@ -8,6 +8,7 @@ function ShowProducts() {
   const params = useParams();
 
   const [productList, setProductList] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [tick, setTick] = useState(0);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ function ShowProducts() {
         setProductList(sortedList);
       })
       .catch((error) => console.log(error));
-  }, []);
+  }, [params.subcatnm]);
 
   const getRemainingTime = (info) => {
     const createTime = new Date(info).getTime();
@@ -105,7 +106,6 @@ function ShowProducts() {
                           <td className="timer-flash">
                             {getRemainingTime(row.info)}
                           </td>
-
                           <td>
                             {row.bid_status == 1 ? (
                               <Link to={`/bidproduct/${row._id}`}>
