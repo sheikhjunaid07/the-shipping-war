@@ -7,4 +7,6 @@ router.post("/save", SubCategoryController.save);
 
 router.get("/fetch", SubCategoryController.fetch);
 
+router.patch("/update", SubCategoryController.update);
+
 export default router;
