@@ -8,7 +8,7 @@ function AdminPanel() {
               <div className="detail-box">
                 <div className="heading_container">
                   <h2>
-                    Welcome Back, <span>{localStorage.getItem("name")}</span>
+                    Welcome back, <span>{localStorage.getItem("name")}</span>
                   </h2>
                 </div>
                 <p>

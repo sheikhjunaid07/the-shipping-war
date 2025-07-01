@@ -14,7 +14,7 @@ function Slider() {
           <>
             <section className="slider_section">
               <div className="slider_bg_box">
-                <img src="/images/slider-bg.jpg" alt="" />
+                <img src="/images/user-panel-bg.jpg" alt="" />
               </div>
               <div
                 id="customCarousel1"
