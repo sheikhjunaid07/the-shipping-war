@@ -53,14 +53,14 @@ function EditCategory() {
           <table>
             <thead>
               <tr>
-                <th className="table-heading">Category </th>
-                <th className="table-heading">Edit Button</th>
+                <th className="table-heading">Categories </th>
+                <th className="table-heading">Edit</th>
               </tr>
             </thead>
             <tbody>
               {catList.map((row) => (
                 <tr key={row._id}>
-                  <td>
+                  <td className="category-name">
                     {editData === row._id ? (
                       <select
                         value={formData.catnm}
@@ -83,7 +83,6 @@ function EditCategory() {
                       row.catnm
                     )}
                   </td>
-
                   <td>
                     {editData === row._id ? (
                       <>
