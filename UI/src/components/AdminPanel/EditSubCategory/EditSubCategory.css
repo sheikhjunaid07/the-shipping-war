@@ -1,0 +1,13 @@
+.table-heading {
+  font-size: 30px;
+}
+.subcategory-name {
+  border: 2px solid grey;
+  width: 250px;
+  height: 40px;
+}
+.category-name {
+  border: 2px solid grey;
+  width: 250px;
+  height: 40px;
+}

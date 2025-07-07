@@ -36,3 +36,24 @@ export const fetch = async (request, response) => {
     response.status(500).json({ status: "false" });
   }
 };
+
+export const update = async (request, response) => {
+  var obj = request.body;
+
+  if (obj != undefined) {
+    let subcategoryDetails = await SubCategorySchemaModel.findOne(
+      request.body.condition_obj
+    );
+    console.log(subcategoryDetails);
+
+    if (subcategoryDetails) {
+      let subcategory = await SubCategorySchemaModel.updateOne(
+        request.body.condition_obj,
+        { $set: request.body.content_obj }
+      );
+      if (subcategory) response.status(200).json({ msg: "OK" });
+      else response.status(500).json({ status: "Server Error" });
+    } else
+      response.status(404).json({ status: "Requested resource not available" });
+  } else response.status(500).json({ status: "Please enter valid condition" });
+};

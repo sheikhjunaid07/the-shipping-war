@@ -185,7 +185,7 @@ function Header() {
                           <a className="nav-link">
                             <Link to="/search">Search</Link>
                           </a>
-                        </li>l
+                        </li>
                         <div class="nav-item dropdown">
                           <a
                             class="nav-link dropdown-toggle"
