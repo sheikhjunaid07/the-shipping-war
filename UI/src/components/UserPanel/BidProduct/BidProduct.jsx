@@ -29,15 +29,9 @@ function BidProduct() {
     axios
       .get(__bidapiurl + "fetch", { params: { product_id: params._id } })
       .then((response1) => {
-        // console.log("Fetched bids:", response1.data); // 👈 log this
-
         const bids = response1.data;
 
         if (!Array.isArray(bids) || bids.length === 0) {
-          // console.log(
-          //   "No bids found, using base price:",
-          //   productDetails.baseprice
-          // );
           setCurrentPrice(productDetails.baseprice);
         } else {
           const minBid = bids.reduce(
@@ -45,12 +39,10 @@ function BidProduct() {
             bids[0].bidprice
           );
 
-          // console.log("Min bid found:", minBid);
           setCurrentPrice(minBid);
         }
       })
       .catch(() => {
-        // console.error("Error fetching bids:", error);
         setCurrentPrice(productDetails.baseprice);
       });
   }, [productDetails, params._id]);

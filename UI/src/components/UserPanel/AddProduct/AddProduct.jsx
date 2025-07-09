@@ -134,6 +134,7 @@ function AddProduct() {
                     {<span style={{ color: "red" }}>{titleError}</span>}
                   </div>
                   <div class="form-group">
+                    <label>Select Category: &nbsp;</label>
                     <select
                       value={catName}
                       onChange={(e) => setCatName(e.target.value)}
@@ -148,6 +149,7 @@ function AddProduct() {
                     {<span style={{ color: "red" }}>{catNameError}</span>}
                   </div>
                   <div class="form-group">
+                    <label>Select Sub Category: &nbsp;</label>
                     <select
                       value={subCatName}
                       onChange={(e) => setSubCatName(e.target.value)}
