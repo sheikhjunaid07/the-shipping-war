@@ -5,6 +5,7 @@ import Contact from "../Contact/Contact";
 import Info from "../Info/Info";
 import Footer from "../Footer/Footer";
 import Slider from "../Slider/Slider";
+import Testimonial from "../Testimonial/Testimonial";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <About />
       <Service />
       <TrackShipping />
+      {/* <Testimonial /> */}
       <br />
       <br />
       <Contact />
