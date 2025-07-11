@@ -19,8 +19,10 @@ function UserPanel() {
                 </div>
                 <br />
                 <h3 style={{ fontWeight: "600" }}>
-                  Your Partner for{" "}
-                  <span style={{ color: "#17a2b8" }}>Fast Shipping</span>
+                  Your Gateway to{" "}
+                  <span style={{ color: "#17a2b8" }}>
+                    Any Destination in the World.
+                  </span>
                 </h3>
                 <br />
                 <h5>
@@ -32,7 +34,11 @@ function UserPanel() {
                   Say goodbye to hidden costs and delays — start managing your
                   shipments smarter today.
                 </p>
-                <button>Start Booking</button>
+                <div className="btn-box">
+                  <a className="btn1">
+                    <Link to="/addproduct"> Get In Touch </Link>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
