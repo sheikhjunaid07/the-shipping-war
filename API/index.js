@@ -19,7 +19,7 @@ app.use(fileUpload());
 //configuration to resolve cross origin problem
 app.use(
   cors({
-    origin: "https://the-shipping-war.vercel.app/",
+    origin: "https://the-shipping-war.vercel.app",
     Credential: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["content-type", "Authorization"],
