@@ -12,15 +12,21 @@ function UserPanel() {
                   <h2>
                     Welcome back, <span>{localStorage.getItem("name")}</span>
                   </h2>
+                  <h3>
+                    Your Trusted Partner in{" "}
+                    <span>Fast and Transparent Shipping</span>
+                  </h3>
                 </div>
                 <p>
-                  There are many variations of passages of Lorem Ipsum
-                  available, but the majority have suffered alteration in some
-                  form, by injected humour, or randomized words which don't look
-                  even slightly believable. If you are going to use a passage of
-                  Lorem Ipsum, you need to be sure there isn't anything
-                  embarrassing hidden in the middle of text. All
+                  We connect you with a network of verified transporters to
+                  simplify your freight process with speed, transparency, and
+                  full visibility.
                 </p>
+                <p style={{ fontSize: "12px" }}>
+                  Say goodbye to hidden costs and delays — start managing your
+                  shipments smarter today.
+                </p>
+                <button>Start Booking</button>
               </div>
             </div>
           </div>
