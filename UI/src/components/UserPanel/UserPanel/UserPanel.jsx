@@ -4,6 +4,9 @@ function UserPanel() {
   return (
     <>
       <section className="about_section layout_padding-bottom">
+        <div>
+          <img src="/images/user-bg.jpg" alt="" />
+        </div>
         <div className="container">
           <div className="row">
             <div className="col-md-6">
@@ -13,11 +16,11 @@ function UserPanel() {
                     Welcome back, <span>{localStorage.getItem("name")}</span>
                   </h2>
                 </div>
-                <h3>
+                <br />
+                <h3 style={{ fontWeight: "600" }}>
                   Your Partner for{" "}
                   <span style={{ color: "#17a2b8" }}>Fast Shipping</span>
                 </h3>
-                <br />
                 <br />
                 <h5>
                   We connect you with a network of verified transporters to
