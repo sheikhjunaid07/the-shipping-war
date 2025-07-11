@@ -1,4 +1,5 @@
 import "./UserPanel.css";
+import { Link } from "react-router-dom";
 
 function UserPanel() {
   return (
@@ -38,7 +39,7 @@ function UserPanel() {
                       </p>
                       <div className="btn-box">
                         <a className="btn1">
-                          <Link to="/contact"> Get In Touch </Link>
+                          <Link to="/addproduct"> Get In Touch </Link>
                         </a>
                       </div>
                     </div>
