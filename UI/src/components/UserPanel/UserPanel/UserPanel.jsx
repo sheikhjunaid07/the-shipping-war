@@ -12,17 +12,17 @@ function UserPanel() {
                   <h2>
                     Welcome back, <span>{localStorage.getItem("name")}</span>
                   </h2>
-                  <h3>
+                  <h2>
                     Your Trusted Partner in{" "}
                     <span>Fast and Transparent Shipping</span>
-                  </h3>
+                  </h2>
                 </div>
-                <p>
+                <h4>
                   We connect you with a network of verified transporters to
                   simplify your freight process with speed, transparency, and
                   full visibility.
-                </p>
-                <p style={{ fontSize: "12px" }}>
+                </h4>
+                <p>
                   Say goodbye to hidden costs and delays — start managing your
                   shipments smarter today.
                 </p>
