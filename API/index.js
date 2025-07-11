@@ -17,13 +17,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(fileUpload());
 
 //configuration to resolve cross origin problem
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://the-shipping-war.vercel.app/",
+    Credential: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["content-type", "Authorization"],
+  })
+);
 
 app.use("/user", UserRouter);
 app.use("/category", CategoryRouter);
 app.use("/subcategory", SubCategoryRouter);
 app.use("/shipment", ShipmentRouter);
-app.use("/bid",BidProductRouter)
+app.use("/bid", BidProductRouter);
 
-app.listen(3001);
-console.log("Server Started at http://localhost:3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Server invoked at port ${PORT}`);
+});
