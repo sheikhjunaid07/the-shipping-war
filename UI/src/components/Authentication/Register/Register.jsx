@@ -64,7 +64,8 @@ function Register() {
           setAddress("");
           setOutput("User register successfully....");
         })
-        .catch(() => {
+        .catch((error) => {
+          console.log(error);
           setOutput("User register failed....");
         });
     }
