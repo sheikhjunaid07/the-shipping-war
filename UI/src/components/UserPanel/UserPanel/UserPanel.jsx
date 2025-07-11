@@ -13,8 +13,8 @@ function UserPanel() {
                     Welcome back, <span>{localStorage.getItem("name")}</span>
                   </h2>
                   <h2>
-                    Your Trusted Partner in{" "}
-                    <span>Fast and Transparent Shipping</span>
+                    Your Partner for{" "}
+                    <span style={{ color: "#17a2b8" }}>Fast Shipping</span>
                   </h2>
                 </div>
                 <h4>
