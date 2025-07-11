@@ -3,7 +3,7 @@ import UserSchemaModel from "../models/user.model.js";
 import rs from "randomstring";
 import jwt from "jsonwebtoken";
 import passwordGenerate from "generate-password";
-import sendMail from "./email.controller.js";
+// import sendMail from "./email.controller.js";
 
 export const save = async (request, response) => {
   const users = await UserSchemaModel.find();
@@ -28,7 +28,7 @@ export const save = async (request, response) => {
 
   try {
     await UserSchemaModel.create(userDetails);
-    sendMail(userDetails.email, userDetails.password);
+    // sendMail(userDetails.email, userDetails.password);
     response.status(201).json({ status: true });
   } catch (error) {
     response.status(500).json({ status: false });
