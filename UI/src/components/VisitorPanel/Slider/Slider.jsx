@@ -40,7 +40,10 @@ function Slider() {
                               competitive bidding process, making shipment
                               handling more efficient.
                             </h4>
-                            <div className="btn-box">
+                            <div
+                              className="btn-box"
+                              style={{ textDecoration: "none" }}
+                            >
                               <Link to="/contact" className="btn1">
                                 {" "}
                                 Get In Touch{" "}
@@ -68,7 +71,10 @@ function Slider() {
                               that sets a new standard in the shipping industry.
                               Join us and be part of the revolution!
                             </h4>
-                            <div className="btn-box">
+                            <div
+                              className="btn-box"
+                              style={{ textDecoration: "none" }}
+                            >
                               <Link to="/contact" className="btn1">
                                 {" "}
                                 Get In Touch{" "}
@@ -96,7 +102,10 @@ function Slider() {
                               transporters to simplify your freight process with
                               speed, transparency, and full visibility.
                             </h4>
-                            <div className="btn-box">
+                            <div
+                              className="btn-box"
+                              style={{ textDecoration: "none" }}
+                            >
                               <Link to="/contact" className="btn1">
                                 {" "}
                                 Get In Touch{" "}
