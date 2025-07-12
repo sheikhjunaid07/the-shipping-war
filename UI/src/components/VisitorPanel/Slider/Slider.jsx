@@ -24,26 +24,22 @@ function Slider() {
                 <div className="carousel-inner">
                   <div className="carousel-item active">
                     <div className="container">
-                      <div className="row">
-                        <div className="col-md-7">
+                      <div>
+                        <div>
                           <div className="detail-box">
                             <h1>
                               We Provide best <br />
-                              Shipping Service
+                              <span style={{ color: "#17a2b8" }}>
+                                Shipping Service
+                              </span>
                             </h1>
-                            <p>
+                            <h4 style={{ color: "white" }}>
                               Welcome to <b>"Shipping Wars"</b>, the platform
                               that revolutionizes the shipping experience! We
                               connect drivers with available shipments through a
                               competitive bidding process, making shipment
-                              handling more efficient. Our secure and
-                              user-friendly interface allows easy navigation,
-                              detailed shipment views, and seamless bidding. At
-                              <b> "Shipping Wars"</b>, we are dedicated to
-                              delivering a functional and intuitive application
-                              that sets a new standard in the shipping industry.
-                              Join us and be part of the revolution!
-                            </p>
+                              handling more efficient.
+                            </h4>
                             <div className="btn-box">
                               <a className="btn1">
                                 <Link to="/contact"> Get In Touch </Link>
@@ -57,25 +53,20 @@ function Slider() {
                   <div className="carousel-item">
                     <div className="container">
                       <div className="row">
-                        <div className="col-md-7">
+                        <div>
                           <div className="detail-box">
                             <h1>
-                              We Provide best <br />
-                              Shipping Service
+                              We Are Proud <br />
+                              <span style={{ color: "#17a2b8" }}>
+                                To Be Always On Demand
+                              </span>
                             </h1>
-                            <p>
-                              Welcome to <b>"Shipping Wars"</b>, the platform
-                              that revolutionizes the shipping experience! We
-                              connect drivers with available shipments through a
-                              competitive bidding process, making shipment
-                              handling more efficient. Our secure and
-                              user-friendly interface allows easy navigation,
-                              detailed shipment views, and seamless bidding. At
+                            <h4 style={{ color: "white" }}>
                               <b> "Shipping Wars"</b>, we are dedicated to
                               delivering a functional and intuitive application
                               that sets a new standard in the shipping industry.
                               Join us and be part of the revolution!
-                            </p>
+                            </h4>
                             <div className="btn-box">
                               <a className="btn1">
                                 <Link to="/contact"> Get In Touch </Link>
@@ -89,25 +80,20 @@ function Slider() {
                   <div className="carousel-item">
                     <div className="container">
                       <div className="row">
-                        <div className="col-md-7">
+                        {/* <div className="col-md-7"> */}
+                        <div>
                           <div className="detail-box">
                             <h1>
-                              We Provide best <br />
-                              Shipping Service
+                              We Are Active <br />
+                              <span style={{ color: "#17a2b8" }}>
+                                To Ship Your Product Trusted
+                              </span>
                             </h1>
-                            <p>
-                              Welcome to <b>"Shipping Wars"</b>, the platform
-                              that revolutionizes the shipping experience! We
-                              connect drivers with available shipments through a
-                              competitive bidding process, making shipment
-                              handling more efficient. Our secure and
-                              user-friendly interface allows easy navigation,
-                              detailed shipment views, and seamless bidding. At
-                              <b> "Shipping Wars"</b>, we are dedicated to
-                              delivering a functional and intuitive application
-                              that sets a new standard in the shipping industry.
-                              Join us and be part of the revolution!
-                            </p>
+                            <h4 style={{ color: "white" }}>
+                              We connect you with a network of verified
+                              transporters to simplify your freight process with
+                              speed, transparency, and full visibility.
+                            </h4>
                             <div className="btn-box">
                               <a className="btn1">
                                 <Link to="/contact"> Get In Touch </Link>
