@@ -41,9 +41,10 @@ function Slider() {
                               handling more efficient.
                             </h4>
                             <div className="btn-box">
-                              <a className="btn1">
-                                <Link to="/contact"> Get In Touch </Link>
-                              </a>
+                              <Link to="/contact" className="btn1">
+                                {" "}
+                                Get In Touch{" "}
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -68,9 +69,10 @@ function Slider() {
                               Join us and be part of the revolution!
                             </h4>
                             <div className="btn-box">
-                              <a className="btn1">
-                                <Link to="/contact"> Get In Touch </Link>
-                              </a>
+                              <Link to="/contact" className="btn1">
+                                {" "}
+                                Get In Touch{" "}
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -95,9 +97,10 @@ function Slider() {
                               speed, transparency, and full visibility.
                             </h4>
                             <div className="btn-box">
-                              <a className="btn1">
-                                <Link to="/contact"> Get In Touch </Link>
-                              </a>
+                              <Link to="/contact" className="btn1">
+                                {" "}
+                                Get In Touch{" "}
+                              </Link>
                             </div>
                           </div>
                         </div>
