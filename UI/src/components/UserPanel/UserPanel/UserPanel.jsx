@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function UserPanel() {
   return (
     <>
-      <section className="about_section layout_padding-bottom">
+      {/* <section className="about_section layout_padding-bottom">
         <div>
           <img src="/images/user-bg.jpg" alt="" />
         </div>
@@ -43,8 +43,8 @@ function UserPanel() {
             </div>
           </div>
         </div>
-      </section>
-      {/* <section className="slider_section">
+      </section> */}
+      <section className="slider_section">
         <div className="slider_bg_box">
           <img src="/images/user-bg.jpg" alt="" />
         </div>
@@ -58,9 +58,11 @@ function UserPanel() {
                     <h2>
                       Welcome back, <span>{localStorage.getItem("name")}</span>
                     </h2>
-                    <h3 style={{ fontWeight: "600" }}>
-                      Your Partner for{" "}
-                      <span style={{ color: "#17a2b8" }}>Fast Shipping</span>
+                    <h3 style={{ fontWeight: "600", color: "white" }}>
+                      Your Gateway to{" "}
+                      <span style={{ color: "#17a2b8" }}>
+                        Any Destination in the World.
+                      </span>
                     </h3>
                     <br />
                     <h5>
@@ -83,7 +85,7 @@ function UserPanel() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 }
