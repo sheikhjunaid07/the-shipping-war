@@ -60,19 +60,21 @@ function UserPanel() {
                   <div className="col-md-7">
                     <div className="detail-box">
                       <div className="heading_container">
-                        <h2>
+                        <br />
+                        <br />
+                        <h2 style={{ color: "white" }}>
                           Welcome back,{" "}
                           <span>{localStorage.getItem("name")}</span>
                         </h2>
                       </div>
-                      <h3 style={{ fontWeight: "600" }}>
+                      <h3 style={{ fontWeight: "600", color: "white" }}>
                         Your Gateway to{" "}
                         <span style={{ color: "#17a2b8" }}>
                           Any Destination in the World.
                         </span>
                       </h3>
                       <br />
-                      <h5>
+                      <h5 style={{ color: "white" }}>
                         We connect you with a network of verified transporters
                         to simplify your freight process with speed,
                         transparency, and full visibility.
@@ -92,15 +94,6 @@ function UserPanel() {
               </div>
             </div>
           </div>
-          <ol className="carousel-indicators">
-            <li
-              data-target="#customCarousel1"
-              data-slide-to="0"
-              className="active"
-            ></li>
-            <li data-target="#customCarousel1" data-slide-to="1"></li>
-            <li data-target="#customCarousel1" data-slide-to="2"></li>
-          </ol>
         </div>
       </section>
     </>
