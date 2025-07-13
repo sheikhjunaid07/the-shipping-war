@@ -131,7 +131,9 @@ function AddProduct() {
                       onChange={(e) => setTitle(e.target.value)}
                       onBlur={() => validateTitle(title)}
                     />
-                    {<span style={{ color: "red" }}>{titleError}</span>}
+                    {titleError && (
+                      <span style={{ color: "red" }}>{titleError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <label>Select Category: &nbsp;</label>
@@ -146,7 +148,9 @@ function AddProduct() {
                       ))}
                     </select>
                     <br />
-                    {<span style={{ color: "red" }}>{catNameError}</span>}
+                    {catNameError && (
+                      <span style={{ color: "red" }}>{catNameError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <label>Select Sub Category: &nbsp;</label>
@@ -161,7 +165,9 @@ function AddProduct() {
                       ))}
                     </select>
                     <br />
-                    {<span style={{ color: "red" }}>{subCatNameError}</span>}
+                    {subCatNameError && (
+                      <span style={{ color: "red" }}>{subCatNameError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <input
@@ -173,7 +179,9 @@ function AddProduct() {
                       onChange={handleProductDescription}
                       onBlur={() => validateDescription(description)}
                     />
-                    {<span style={{ color: "red" }}>{descriptionError}</span>}
+                    {descriptionError && (
+                      <span style={{ color: "red" }}>{descriptionError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <input
@@ -183,7 +191,9 @@ function AddProduct() {
                       onChange={(e) => setBaseprice(e.target.value)}
                       onBlur={() => validateBaseprice(baseprice)}
                     />
-                    {<span style={{ color: "red" }}>{basepriceError}</span>}
+                    {basepriceError && (
+                      <span style={{ color: "red" }}>{basepriceError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <input
@@ -195,7 +205,9 @@ function AddProduct() {
                       onChange={handleProductIcon}
                       onBlur={() => validateFile(file)}
                     />
-                    {<span style={{ color: "red" }}>{fileError}</span>}
+                    {fileError && (
+                      <span style={{ color: "red" }}>{fileError}</span>
+                    )}
                   </div>
                   <div className="btn_box">
                     <button type="button" onClick={handleSubmit}>

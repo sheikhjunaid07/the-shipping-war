@@ -65,7 +65,9 @@ function AddCategory() {
                       onChange={(e) => setCatName(e.target.value)}
                       onBlur={() => validateCategoryName(catName)}
                     />
-                    {<span style={{ color: "red" }}>{catNameError}</span>}
+                    {catNameError && (
+                      <span style={{ color: "red" }}>{catNameError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <input
@@ -73,7 +75,9 @@ function AddCategory() {
                       onChange={handleChange}
                       onBlur={() => validateFile(file)}
                     />
-                    {<span style={{ color: "red" }}>{fileError}</span>}
+                    {fileError && (
+                      <span style={{ color: "red" }}>{fileError}</span>
+                    )}
                   </div>
                   <div className="btn_box">
                     <button type="button" onClick={handleSubmit}>

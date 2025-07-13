@@ -90,7 +90,9 @@ function AddSubCategory() {
                       ))}
                     </select>
                     <br />
-                    {<span style={{ color: "red" }}>{catNameError}</span>}
+                    {catNameError && (
+                      <span style={{ color: "red" }}>{catNameError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <input
@@ -100,7 +102,9 @@ function AddSubCategory() {
                       onChange={(e) => setSubCatName(e.target.value)}
                       onBlur={() => validateSubCategoryName(subCatName)}
                     />
-                    {<span style={{ color: "red" }}>{subCatNameError}</span>}
+                    {subCatNameError && (
+                      <span style={{ color: "red" }}>{subCatNameError}</span>
+                    )}
                   </div>
                   <div class="form-group">
                     <input
@@ -108,7 +112,9 @@ function AddSubCategory() {
                       onChange={handleChange}
                       onBlur={() => validateFile(file)}
                     />
-                    {<span style={{ color: "red" }}>{fileError}</span>}
+                    {fileError && (
+                      <span style={{ color: "red" }}>{fileError}</span>
+                    )}
                   </div>
                   <div className="btn_box">
                     <button type="button" onClick={handleSubmit}>
