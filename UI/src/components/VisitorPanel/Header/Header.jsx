@@ -3,7 +3,7 @@ import "./Header.css";
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import Auth from "../../Authentication/Auth/Auth";
+import { Auth } from "../../../importFilePaths";
 
 function Header() {
   const [HeaderContent, setHeaderContent] = useState();

@@ -1,11 +1,4 @@
-import Service from "../Service/Service";
-import About from "../About/About";
-import TrackShipping from "../TrackShipping/TrackShipping";
-import Contact from "../Contact/Contact";
-import Info from "../Info/Info";
-import Footer from "../Footer/Footer";
-import Slider from "../Slider/Slider";
-import Testimonial from "../Testimonial/Testimonial";
+import { About, Contact, Footer, Info, Service, Slider, TrackShipping } from "../../../importFilePaths";
 
 function Home() {
   return (
