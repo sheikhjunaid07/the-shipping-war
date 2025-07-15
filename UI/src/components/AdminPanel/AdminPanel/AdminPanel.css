@@ -1,0 +1,38 @@
+/* .card:hover {
+  transform: scale(1.05);
+}
+
+.card {
+  margin-top: 20px;
+  text-align: center;
+}
+*/
+@media (max-width: 750px) {
+  .main-card {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .manage-options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.main-card {
+  display: flex;
+  gap: 20px;
+}
+
+.manage-options {
+  display: flex;
+  gap: 20px;
+}
+
+/* .manage-options Link {
+  background-color: none;
+}
+
+.manage-options Link:hover {
+  background-color: none; 
+}
+  */
