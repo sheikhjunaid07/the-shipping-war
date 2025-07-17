@@ -1,6 +1,5 @@
 import "./AdminPanel.css";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { __shipmentapiurl, __userapiurl } from "../../../reqUrl";
 import Card from "../AdminUtilities/Card";
