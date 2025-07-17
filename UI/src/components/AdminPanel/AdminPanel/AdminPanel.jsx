@@ -34,10 +34,7 @@ function AdminPanel() {
     fetchDetails();
   }, []);
 
-  const handleNavigation = (path) => {
-    // Navigate programmatically without <Link>
-    window.location.href = path;
-  };
+  const handleNavigation = (path) => (window.location.href = path);
 
   return (
     <>
