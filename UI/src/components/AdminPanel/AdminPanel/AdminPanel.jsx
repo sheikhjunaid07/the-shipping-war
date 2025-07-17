@@ -1,5 +1,6 @@
 import "./AdminPanel.css";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 import { __shipmentapiurl, __userapiurl } from "../../../reqUrl";
 import Card from "../AdminUtilities/Card";
@@ -32,6 +33,12 @@ function AdminPanel() {
     };
     fetchDetails();
   }, []);
+
+  const handleNavigation = (path) => {
+    // Navigate programmatically without <Link>
+    window.location.href = path;
+  };
+
   return (
     <>
       <section className="about_section layout_padding-bottom">
@@ -44,10 +51,11 @@ function AdminPanel() {
                   style={{ alignItems: "center" }}
                 >
                   <h2>
+                    {" "}
                     Welcome back Chief,
                     <span style={{ color: "#17a2b8" }}>
                       {" "}
-                      &nbsp;{localStorage.getItem("name")}
+                      &nbsp;{localStorage.getItem("name")}{" "}
                     </span>
                   </h2>
                 </div>
@@ -63,16 +71,35 @@ function AdminPanel() {
                   style={{ alignItems: "center" }}
                 >
                   <h3>
-                    Quick
-                    <span style={{ color: "#17a2b8" }}> Options</span>
+                    {" "}
+                    Quick <span style={{ color: "#17a2b8" }}>
+                      {" "}
+                      Options
+                    </span>{" "}
                   </h3>
                 </div>
                 <div className="manage-options">
                   {/* Add Link Tag All the Options */}
-                  <Card title={"Mange Users"} icon={"👥"} />
-                  <Card title={"Mange Products"} icon={"📦"} />
-                  <Card title={"Add Category"} icon={"➕"} />
-                  <Card title={"Add SubCategory"} icon={"➕"} />
+                  <Card
+                    title={"Mange Users"}
+                    icon={"👥"}
+                    onClick={() => handleNavigation("/manageuser")}
+                  />
+                  <Card
+                    title={"Mange Products"}
+                    icon={"📦"}
+                    onClick={() => handleNavigation("/manageproducts")}
+                  />
+                  <Card
+                    title={"Add Category"}
+                    icon={"➕"}
+                    onClick={() => handleNavigation("/addcategory")}
+                  />
+                  <Card
+                    title={"Add SubCategory"}
+                    icon={"➕"}
+                    onClick={() => handleNavigation("/addsubcategory")}
+                  />
                 </div>
               </div>
             </div>
