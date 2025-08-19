@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.26.9",
     "babel-plugin-add-module-exports": "^1.0.4",
     "body-parser": "^2.2.0",
+    "cloudinary": "^2.7.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
