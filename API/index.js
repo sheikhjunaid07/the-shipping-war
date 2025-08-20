@@ -22,7 +22,7 @@ app.use(
     origin: "https://the-shipping-war.vercel.app",
     Credential: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    allowedHeaders: ["content-type", "Authorization"],
+    allowedHeaders: ["content-type", "Authorization"]
   })
 );
 

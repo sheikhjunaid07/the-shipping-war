@@ -6,7 +6,7 @@ function UserPanel() {
     <>
       <section className="slider_section">
         <div className="slider_bg_box">
-          <img src="/images/user-panel-bg.jpg" alt="" />
+          <img src="/images/user-panel-bg.jpg" alt="bg-image" />
         </div>
         <div
           id="customCarousel1"
