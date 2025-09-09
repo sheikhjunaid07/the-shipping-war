@@ -25,4 +25,4 @@ Quality Assurance (QA) Tester:
 Conduct thorough testing of both the backend and frontend components to identify and resolve bugs, ensuring a smooth user experience.
 Develop and execute test cases for API endpoints, user authentication, and UI interactions, validating functionality against project requirements.
 Collaborate with developers to ensure that all features are implemented correctly and meet quality standards before deployment.
-These roles will help ensure that your project is well-structured, functional, and user-friendly, contributing to a successful MERN Stack application based on "Shipping Wars."
+These roles will help ensure that your project is well-structured, functional, and user-friendly, contributing to a successful MERN Stack application based on "Shipping Wars".
