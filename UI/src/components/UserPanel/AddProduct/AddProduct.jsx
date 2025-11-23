@@ -108,120 +108,122 @@ function AddProduct() {
   return (
     <>
       {" "}
-      <section className="contact_section">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-4 col-md-5 offset-md-1">
-              <div className="heading_container">
-                <h2>
-                  Add Shipping Product <span>Here!!</span>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4 col-md-5 offset-md-1">
-              <div className="form_container contact-form">
-                <form>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      placeholder="Add Shipping Title"
-                      value={title}
-                      onChange={(e) => setTitle(e.target.value)}
-                      onBlur={() => validateTitle(title)}
-                    />
-                    {titleError && (
-                      <span style={{ color: "red" }}>{titleError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <label>Select Category: &nbsp;</label>
-                    <select
-                      value={catName}
-                      onChange={(e) => setCatName(e.target.value)}
-                      onBlur={() => validateCategoryName(catName)}
-                    >
-                      <option>--Select--</option>
-                      {catList.map((row) => (
-                        <option>{row.catnm}</option>
-                      ))}
-                    </select>
-                    <br />
-                    {catNameError && (
-                      <span style={{ color: "red" }}>{catNameError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <label>Select Sub Category: &nbsp;</label>
-                    <select
-                      value={subCatName}
-                      onChange={(e) => setSubCatName(e.target.value)}
-                      onBlur={() => validateSubCategoryName(subCatName)}
-                    >
-                      <option>--Select--</option>
-                      {subCatList.map((row) => (
-                        <option>{row.subcatnm}</option>
-                      ))}
-                    </select>
-                    <br />
-                    {subCatNameError && (
-                      <span style={{ color: "red" }}>{subCatNameError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <input
-                      id="descfile"
-                      type="file"
-                      class="form-control"
-                      accept=".pdf, .doc, .docx"
-                      placeholder="Shipment Description"
-                      onChange={handleProductDescription}
-                      onBlur={() => validateDescription(description)}
-                    />
-                    {descriptionError && (
-                      <span style={{ color: "red" }}>{descriptionError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      placeholder="Base Amount For Shipment"
-                      value={baseprice}
-                      onChange={(e) => setBaseprice(e.target.value)}
-                      onBlur={() => validateBaseprice(baseprice)}
-                    />
-                    {basepriceError && (
-                      <span style={{ color: "red" }}>{basepriceError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <input
-                      id="myfile"
-                      type="file"
-                      accept=".jpg, .jpeg, .png"
-                      class="form-control"
-                      placeholder="Shipment Photos"
-                      onChange={handleProductIcon}
-                      onBlur={() => validateFile(file)}
-                    />
-                    {fileError && (
-                      <span style={{ color: "red" }}>{fileError}</span>
-                    )}
-                  </div>
-                  <div className="btn_box">
-                    <button type="button" onClick={handleSubmit}>
-                      Add Product
-                    </button>
-                    <br />
-                    {output}
-                  </div>
-                </form>
-              </div>
+      <div className="container py-5">
+        <div className="row justify-content-center">
+          <div className="col-lg-6 col-md-8 offset-md-1 ">
+            <div className="heading_container">
+              <h2>
+                Add Shipping Product <span>Here!!</span>
+              </h2>
             </div>
           </div>
         </div>
-      </section>
+        <div className="row justify-content-center pt-4 ">
+          <div className="col-lg-4 col-md-5 offset-md">
+            <div className="form_container contact-form">
+              <form>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Add Shipping Title"
+                    value={title}
+                    className="form-control p-3"
+                    onChange={(e) => setTitle(e.target.value)}
+                    onBlur={() => validateTitle(title)}
+                  />
+                  {<span style={{ color: "red" }}>{titleError}</span>}
+                </div>
+                <div className="mb-3">
+                  <select
+                    value={catName}
+                    className="form-control"
+                    style={{ backgroundColor: "whitesmoke" }}
+                    onChange={(e) => setCatName(e.target.value)}
+                    onBlur={() => validateCategoryName(catName)}
+                  >
+                    <option>Select Category</option>
+                    {catList.map((row) => (
+                      <option>{row.catnm}</option>
+                    ))}
+                  </select>
+                  <br />
+                  {<span style={{ color: "red" }}>{catNameError}</span>}
+                </div>
+                <div className="mb-3">
+                  <select
+                    style={{ backgroundColor: "whitesmoke" }}
+                    value={subCatName}
+                    className="form-control"
+                    onChange={(e) => setSubCatName(e.target.value)}
+                    onBlur={() => validateSubCategoryName(subCatName)}
+                  >
+                    <option>Select Sub Category</option>
+                    {subCatList.map((row) => (
+                      <option>{row.subcatnm}</option>
+                    ))}
+                  </select>
+                  <br />
+                  {<span style={{ color: "red" }}>{subCatNameError}</span>}
+                </div>
+                <div className="mb-3">
+                  <label style={{ color: "gray", fontSize: "12px" }}>
+                    Upload Doc Containing All Details About Product (PDF, DOCX
+                    only) &nbsp;
+                  </label>
+                  <input
+                    id="descfile"
+                    type="file"
+                    className="form-control"
+                    accept=".pdf, .doc, .docx, .txt"
+                    placeholder="Shipment Description"
+                    onChange={handleProductDescription}
+                    onBlur={() => validateDescription(description)}
+                  />
+                  {<span style={{ color: "red" }}>{descriptionError}</span>}
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    placeholder="Base Amount For Shipment"
+                    value={baseprice}
+                    className="form-control p-3"
+                    onChange={(e) => setBaseprice(e.target.value)}
+                    onBlur={() => validateBaseprice(baseprice)}
+                  />
+                  {<span style={{ color: "red" }}>{basepriceError}</span>}
+                </div>
+                <div className="mb-3">
+                  <label style={{ color: "gray", fontSize: "12px" }}>
+                    Upload Shipment Image (JPG, PNG, GIF only)
+                  </label>
+                  <input
+                    id="myfile"
+                    type="file"
+                    accept=".jpg, .jpeg, .png"
+                    className="form-control"
+                    placeholder="Shipment Photos"
+                    onChange={handleProductIcon}
+                    onBlur={() => validateFile(file)}
+                  />
+                  {<span style={{ color: "red" }}>{fileError}</span>}
+                </div>
+                <div className="btn_box">
+                  <button
+                    type="button"
+                    style={{ backgroundColor: "#0A97B0", color: "white" }}
+                    className="form-control"
+                    onClick={handleSubmit}
+                  >
+                    Add Product
+                  </button>
+                  <br />
+                  {output}
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

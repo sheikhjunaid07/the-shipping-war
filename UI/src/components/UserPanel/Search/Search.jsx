@@ -23,7 +23,9 @@ function Search() {
             <div class="col-lg-12">
               <h1 class="mb-4">
                 Category List{" "}
-                <span class="text-primary text-uppercase">&gt;&gt;</span>
+                <span class="text-uppercase" style={{ color: "#0A97B0" }}>
+                  &gt;&gt;
+                </span>
               </h1>
               <center>
                 <div id="main">

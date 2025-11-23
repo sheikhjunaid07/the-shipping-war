@@ -122,7 +122,8 @@ function MyProduct() {
             {/* Text with fade-left animation */}
             <div className="col-lg-12">
               <h2 className="text-dark text-uppercase fw-bold mb-3">
-                My Product List <span style={{ color: "blue" }}> &gt;&gt;</span>
+                My Product List{" "}
+                <span style={{ color: "#0A97B0" }}> &gt;&gt;</span>
               </h2>
               <div className="table-responsive">
                 <table className="table table-striped table-dark align-middle">
@@ -246,13 +247,13 @@ function MyProduct() {
                           <td>
                             {row.bid_status == 1 ? (
                               <Link to={`/bidproduct/${row._id}`}>
-                                <button className="btn btn-outline-success">
+                                <button className="btn btn-outline-success mt-3">
                                   Participate
                                 </button>
                               </Link>
                             ) : (
                               <button
-                                className="btn btn-outline-danger"
+                                className="btn btn-outline-danger mt-3"
                                 disabled
                               >
                                 Closed
@@ -265,7 +266,7 @@ function MyProduct() {
                                 href={`/uploads/shipmentdescriptions/${row.description}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-sm btn-outline-light"
+                                className="btn btn-sm btn-outline-light mt-3"
                               >
                                 View Doc
                               </a>
@@ -291,7 +292,7 @@ function MyProduct() {
                               </>
                             ) : (
                               <button
-                                className="btn btn-sm btn-outline-warning"
+                                className="btn btn-m btn-btn-outline-warning mt-4"
                                 onClick={() => handleEdit(row)}
                                 disabled={row.bid_status === 0}
                               >
