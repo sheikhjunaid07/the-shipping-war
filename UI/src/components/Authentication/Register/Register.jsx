@@ -1,5 +1,6 @@
 import "./Register.css";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { __userapiurl } from "../../../reqUrl";
 import {
@@ -62,6 +63,7 @@ function Register() {
           setMobile("");
           setCity("");
           setAddress("");
+          setGender("");
           setOutput("User register successfully....");
         })
         .catch((error) => {
@@ -73,126 +75,164 @@ function Register() {
 
   return (
     <>
-      <section className="contact_section">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-lg-4 col-md-5 offset-md-1">
-              <div className="heading_container">
-                <h3>{output}</h3>
-                <h2>
-                  Register <span>Here!!</span>
-                </h2>
+      <div className="register-container">
+        <div className="register-card">
+          <h2 className="register-title">
+            Register <span style={{ color: "#0A97B0" }}>Yourself!!</span>
+          </h2>
+
+          {output && (
+            <div
+              className={`alert ${
+                output.includes("success") ? "alert-success" : "alert-danger"
+              } output-message`}
+            >
+              {output}
+            </div>
+          )}
+
+          <form className="register-form" onSubmit={(e) => e.preventDefault()}>
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Full Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  className={`form-control `}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="Enter Name"
+                />
+                {nameError && <span style={{ color: "red" }}>{nameError}</span>}
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  className={`form-control`}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="example@mail.com"
+                />
+                {emailError && (
+                  <span style={{ color: "red" }}>{emailError}</span>
+                )}
               </div>
             </div>
-          </div>
-          <div className="row">
-            <div className="col-lg-4 col-md-5 offset-md-1">
-              <div className="form_container contact-form">
-                <form>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      placeholder="Your Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      onBlur={() => validateName(name)}
-                    />
-                    {nameError && (
-                      <span style={{ color: "red" }}>{nameError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="email"
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      onBlur={() => validateEmail(email)}
-                    />
-                    {emailError && (
-                      <span style={{ color: "red" }}>{emailError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <input
-                      type="text"
-                      placeholder="Phone Number"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
-                      onBlur={() => validateMobile(mobile)}
-                    />
-                    {mobileError && (
-                      <span style={{ color: "red" }}>{mobileError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <textarea
-                      rows="5"
-                      cols="40"
-                      placeholder="Address"
-                      value={address}
-                      onChange={(e) => setAddress(e.target.value)}
-                      onBlur={() => validateAddress(address)}
-                    ></textarea>
-                    <br />
-                    {addressError && (
-                      <span style={{ color: "red" }}>{addressError}</span>
-                    )}
-                  </div>
-                  <div class="form-group">
-                    <select
-                      value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      onBlur={() => validateCity(city)}
-                    >
-                      <optgroup label="Madhya Pradesh">
-                        <option>Indore</option>
-                        <option>Bhopal</option>
-                        <option>Ujjain</option>
-                      </optgroup>
-                      <optgroup label="Maharashtra">
-                        <option>Mumbai</option>
-                        <option>Pune</option>
-                        <option>Nashik</option>
-                      </optgroup>
-                    </select>{" "}
-                    &nbsp;
-                    {cityError && (
-                      <span style={{ color: "red" }}>{cityError}</span>
-                    )}
-                  </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="mobile">Mobile</label>
+                <input
+                  id="mobile"
+                  type="text"
+                  className={`form-control `}
+                  value={mobile}
+                  onChange={(e) => setMobile(e.target.value)}
+                  placeholder="1234567890"
+                />
+                {mobileError && (
+                  <span style={{ color: "red" }}>{mobileError}</span>
+                )}
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="city">City</label>
+                <select
+                  id="city"
+                  className={`form-select`}
+                  value={city}
+                  onChange={(e) => setCity(e.target.value)}
+                >
+                  <option value="">Select city</option>
+                  <optgroup label="Madhya Pradesh">
+                    <option value="Indore">Indore</option>
+                    <option value="Bhopal">Bhopal</option>
+                    <option value="Ujjain">Ujjain</option>
+                  </optgroup>
+                  <optgroup label="Maharashtra">
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Nasik">Nasik</option>
+                  </optgroup>
+                </select>
+                {cityError && <span style={{ color: "red" }}>{cityError}</span>}
+              </div>
+
+              <div className="form-group gender-group">
+                <label>Gender</label>
+                <div className="gender-options">
                   <div>
-                    Male
                     <input
                       type="radio"
+                      id="male"
                       name="gender"
-                      value={gender}
+                      value="male"
+                      checked={gender === "male"}
                       onChange={(e) => setGender(e.target.value)}
-                      onBlur={() => validateGender(gender)}
                     />
-                    Female
+                    <label htmlFor="male">Male</label>
+                  </div>
+
+                  <div>
                     <input
                       type="radio"
+                      id="female"
                       name="gender"
-                      value={gender}
+                      value="female"
+                      checked={gender === "female"}
                       onChange={(e) => setGender(e.target.value)}
-                      onBlur={() => validateGender(gender)}
                     />
-                    {genderError && (
-                      <span style={{ color: "red" }}>{genderError}</span>
-                    )}
+                    <label htmlFor="female">Female</label>
                   </div>
-                  <div className="btn_box">
-                    <button type="button" onClick={handleSubmit}>
-                      Submit
-                    </button>
-                  </div>
-                </form>
+                </div>
+                {genderError && (
+                  <span style={{ color: "red" }}>{genderError}</span>
+                )}
               </div>
             </div>
-          </div>
+
+            <div className="form-group">
+              <label htmlFor="address">Address</label>
+              <textarea
+                id="address"
+                rows="3"
+                className={`form-control `}
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                placeholder="123 Main Street, City, State"
+              />
+              {addressError && (
+                <span style={{ color: "red" }}>{addressError}</span>
+              )}
+            </div>
+
+            <button
+              type="button"
+              className="btn w-100 mt-4"
+              style={{ backgroundColor: "#0A97B0", color: "white" }}
+              onClick={handleSubmit}
+            >
+              Register Now
+            </button>
+
+            <p className="text-center mt-3">
+              Already registered?{" "}
+              <Link
+                to="/login"
+                style={{ color: "#0A97B0" }}
+                className="link-login"
+              >
+                Login here
+              </Link>
+            </p>
+          </form>
         </div>
-      </section>
+      </div>
     </>
   );
 }

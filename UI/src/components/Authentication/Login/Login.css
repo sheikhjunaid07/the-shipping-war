@@ -2,3 +2,12 @@
   width: 20px;
   height: 16px;
 }
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+}
