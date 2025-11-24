@@ -27,23 +27,24 @@ function Search() {
                   &gt;&gt;
                 </span>
               </h1>
-              <center>
-                <div id="main">
-                  {catList.map((row) => (
-                    <div class="main_part">
+              <div className="row">
+                {catList.map((row) => (
+                  <div className="col-md-4 mb-4" key={row.catnm}>
+                    <div className="text-center">
                       <Link to={`/searchsc/${row.catnm}`}>
                         <img
                           src={`/uploads/categoryicons/${row.caticonnm}`}
-                          width={150}
-                          height={120}
+                          width={200}
+                          height={150}
+                          className="img-fluid"
                         />
                       </Link>
                       <br />
                       <b>{row.catnm}</b>
                     </div>
-                  ))}
-                </div>
-              </center>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

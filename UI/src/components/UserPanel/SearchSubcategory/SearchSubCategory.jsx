@@ -29,10 +29,10 @@ function SearchSubCategory() {
                 <span class="text-primary text-uppercase">&gt;&gt;</span>{" "}
                 {params.catnm}
               </h1>
-              <center>
-                <div id="main">
+              <div id="main">
+                <div className="row">
                   {subCatList.map((row) => (
-                    <div class="main_part">
+                    <div className="col-md-3  mb-4">
                       <Link to={`/showproduct/${row.subcatnm}`}>
                         <img
                           src={`/uploads/subcategoryicons/${row.subcaticonnm}`}
@@ -45,7 +45,7 @@ function SearchSubCategory() {
                     </div>
                   ))}
                 </div>
-              </center>
+              </div>
             </div>
           </div>
         </div>
