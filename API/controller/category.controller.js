@@ -2,27 +2,52 @@ import CategorySchemaModel from "../models/category.model.js";
 import "../models/connection.js";
 import url from "url";
 import path from "path";
+import dotenv from "dotenv";
+import { v2 as cloudinary } from "cloudinary";
 
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+dotenv.config();
+// ✅ Cloudinary inline config
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUD_API_KEY,
+  api_secret: process.env.CLOUD_API_SECRET_KEY,
+});
+
+// const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 export const save = async (request, response) => {
   const categories = await CategorySchemaModel.find();
   const len = categories.length;
   const _id = len == 0 ? 1 : categories[len - 1]._id + 1;
 
+  if (!request.files || !request.files.caticon) {
+    return res.status(400).json({ status: false, message: "No file uploaded" });
+  }
+
   //to get file & to move in specific folder
   const caticon = request.files.caticon;
-  const caticonnm = Date.now() + "-" + caticon.name;
-  const uploadpath = path.join(
-    __dirname,
-    "../../UI/public/uploads/categoryicons",
-    caticonnm
-  );
-  caticon.mv(uploadpath);
-  const categoryDetails = { ...request.body, _id: _id, caticonnm: caticonnm };
+
+  // ✅ Upload to Cloudinary (no config file needed)
+  const result = await cloudinary.uploader.upload(caticon.tempFilePath, {
+    folder: "category_icons",
+  });
+
+  // const caticonnm = Date.now() + "-" + caticon.name;
+  // const uploadpath = path.join(
+  //   __dirname,
+  //   "../../UI/public/uploads/categoryicons",
+  //   caticonnm
+  // );
+  // caticon.mv(uploadpath);
+
+  const categoryDetails = {
+    ...request.body,
+    _id: _id,
+    caticonnm: result.secure_url, // ✅ save Cloudinary image URL
+  };
   try {
     await CategorySchemaModel.create(categoryDetails);
-    response.status(201).json({ status: "true" });
+    response.status(201).json({ status: "true", url: result.secure_url });
   } catch {
     response.status(500).json({ status: "false" });
   }
