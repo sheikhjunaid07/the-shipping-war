@@ -11,7 +11,7 @@ function Header() {
   useEffect(() => {
     setInterval(() => {
       if (
-        localStorage.getItem("token") != undefined &&
+        localStorage.getItem("accessToken") != undefined &&
         localStorage.getItem("role") == "admin"
       ) {
         setHeaderContent(
@@ -135,7 +135,7 @@ function Header() {
           </>
         );
       } else if (
-        localStorage.getItem("token") != undefined &&
+        localStorage.getItem("accessToken") != undefined &&
         localStorage.getItem("role") == "user"
       ) {
         setHeaderContent(
