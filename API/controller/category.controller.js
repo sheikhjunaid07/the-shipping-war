@@ -5,7 +5,7 @@ import path from "path";
 import dotenv from "dotenv";
 import { v2 as cloudinary } from "cloudinary";
 
-dotenv.config();
+dotenv.config({ path: './data.env' });
 // ✅ Cloudinary inline config
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
