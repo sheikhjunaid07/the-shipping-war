@@ -1,6 +1,5 @@
 import SubCategorySchemaModel from "../models/subcategory.model.js";
 import "../models/connection.js";
-import url from "url";
 import path from "path";
 import dotenv from "dotenv";
 import { v2 as cloudinary } from "cloudinary";

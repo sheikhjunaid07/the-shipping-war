@@ -7,6 +7,7 @@ import {
   validateEmail,
   validatePassword,
 } from "../../../utilityFunctions/ValidationFunctions";
+import { setTokens } from "../../../utils/tokenUtils";
 
 function Login() {
   const navigate = useNavigate();
@@ -63,9 +64,20 @@ function Login() {
       axios
         .post(__userapiurl + "login", loginDetails)
         .then((response) => {
-          const user = response.data.userDetails;
+          const {
+            accessToken,
+            refreshToken,
+            userDetails: user,
+          } = response.data;
 
-          localStorage.setItem("token", response.data.token);
+          console.log(
+            "Tokens",
+            accessToken,
+            "-------------------",
+            refreshToken
+          );
+
+          setTokens(accessToken, refreshToken);
           localStorage.setItem("name", user.name);
           localStorage.setItem("email", user.email);
           localStorage.setItem("mobile", user.mobile);

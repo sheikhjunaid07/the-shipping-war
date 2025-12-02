@@ -1,9 +1,10 @@
 import "../models/connection.js";
 import UserSchemaModel from "../models/user.model.js";
-import rs from "randomstring";
 import jwt from "jsonwebtoken";
 import passwordGenerate from "generate-password";
 import sendMail from "./email.controller.js";
+import dotenv from "dotenv";
+dotenv.config({ path: "./data.env" });
 
 export const save = async (request, response) => {
   const users = await UserSchemaModel.find();
@@ -75,15 +76,45 @@ export const update = async (request, response) => {
 };
 
 export const login = async (request, response) => {
-  var condition_obj = { ...request.body, status: 1 };
+  var condition_obj = { email: request.body.email, status: 1 };
   var userList = await UserSchemaModel.find(condition_obj);
   if (userList.length != 0) {
-    const payload = userList[0].email;
-    const key = rs.generate(50);
-    const token = jwt.sign(payload, key);
+    const payload = { email: userList[0].email, _id: userList[0]._id };
 
-    response.status(200).json({ token: token, userDetails: userList[0] });
+    const accessToken = jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET, {
+      expiresIn: "15m",
+    });
+    const refreshToken = jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET, {
+      expiresIn: "7d",
+    });
+
+    response.status(200).json({
+      accessToken: accessToken,
+      refreshToken: refreshToken,
+      userDetails: userList[0],
+    });
   } else {
-    response.status(500).json({ token: "error" });
+    response.status(401).json({ status: "Invalid credentials" });
+  }
+};
+
+export const refreshToken = async (request, response) => {
+  const { refreshToken } = request.body;
+
+  if (!refreshToken) {
+    return response.status(400).json({ status: "Refresh token required" });
+  }
+
+  try {
+    const payload = jwt.verify(refreshToken, process.env.REFRESH_TOKEN_SECRET);
+    const accessToken = jwt.sign(
+      { email: payload.email, _id: payload._id },
+      process.env.ACCESS_TOKEN_SECRET,
+      { expiresIn: "15m" }
+    );
+
+    response.status(200).json({ accessToken: accessToken });
+  } catch (error) {
+    response.status(401).json({ status: "Invalid refresh token" });
   }
 };
