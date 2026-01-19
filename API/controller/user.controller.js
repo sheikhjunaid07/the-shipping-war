@@ -78,6 +78,7 @@ export const update = async (request, response) => {
 export const login = async (request, response) => {
   var condition_obj = { email: request.body.email, status: 1 };
   var userList = await UserSchemaModel.find(condition_obj);
+
   if (userList.length != 0) {
     const payload = { email: userList[0].email, _id: userList[0]._id };
 
@@ -110,9 +111,8 @@ export const refreshToken = async (request, response) => {
     const accessToken = jwt.sign(
       { email: payload.email, _id: payload._id },
       process.env.ACCESS_TOKEN_SECRET,
-      { expiresIn: "15m" }
+      { expiresIn: "15m" },
     );
-
     response.status(200).json({ accessToken: accessToken });
   } catch (error) {
     response.status(401).json({ status: "Invalid refresh token" });
