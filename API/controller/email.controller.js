@@ -16,9 +16,10 @@ async function sendMail(email, password) {
         <p><b>Username:</b> ${email}</p>
         <p><b>Password:</b> ${password}</p>
 
-        <a href="${process.env.FRONTEND_URL}/verify/${email}">
-          Click here to verify your account
-        </a>
+        <a href='http://localhost:5173/verify/" +
+      ${email} +
+      "'>Click to verify....</a>
+
       `,
     });
 
